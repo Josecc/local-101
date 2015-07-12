@@ -1,0 +1,135 @@
+.animated { 
+    -webkit-animation-duration: 2s; 
+    animation-duration: 2s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+    -webkit-animation-timing-function: ease-in-out; 
+    animation-timing-function: ease-in-out; 
+    animation-iteration-count:infinite; 
+    -webkit-animation-iteration-count:infinite; 
+} 
+
+@-webkit-keyframes bounce { 
+    0%, 30%, 60%, 85%, 100% {-webkit-transform: translateY(0);} 
+    45% {-webkit-transform: translateY(-20px);} 
+    70% {-webkit-transform: translateY(-15px);} 
+} 
+
+@keyframes bounce { 
+    0%, 30%, 60%, 85%, 100% {transform: translateY(0);} 
+    45% {transform: translateY(-20px);} 
+    70% {transform: translateY(-15px);} 
+} 
+
+.bounce { 
+    -webkit-animation-name: bounce; 
+    animation-name: bounce; 
+}
+
+.thing-form {
+    margin: 20px 0;
+}
+
+#banner {
+    border-bottom: none;
+    margin-top: 10px;
+    font-family: "futura-pt",sans-serif;
+    font-weight: 400;
+    //background-color: blue;
+}
+
+#banner h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    margin-bottom: 4%;
+    margin-top: -.2%;
+    font-family: "strenuous-cast" ,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.news {
+    border-top: solid 1px $normal;
+    color: $normal;
+    & h2 {
+        text-align: center;
+    }
+}
+
+.hero-unit {
+    min-height: calc(100vh - 64px);
+    position: relative;
+    padding: 30px 15px;
+    color: #282828;
+    text-align: center;
+    display: table;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    background: $light;
+
+    & i{
+        margin-top: 1%;
+        margin-bottom: -4%;
+        font-size: 40px;
+    }
+}
+
+.head {
+    display: table-cell;
+    vertical-align: middle;
+    padding-bottom: 0 !important;
+}
+
+.container {
+    width: 100%;
+}
+
+.edge {
+    margin: 0px;
+    padding: 0px;
+}
+
+.join-header {
+    width: 100%;
+    border: none;
+    padding: 16px;
+    margin: 0px;
+    background-color: $normal;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+}
+
+.carouselSlide {
+    height: 330px; 
+    overflow: hidden;
+    @media(max-width:768px){
+        height: auto; 
+    }
+}
+
+.join-form {
+    text-align: center;
+}
+
+.checkboxes {
+    text-align: left;
+    & p{
+        margin-left: 15%;
+    }
+}
+
+.capcha {
+    display: block;
+    padding: auto;
+}
+
+.footer {
+    color: #C8C8C8;
+    text-align: center;
+    padding: 14px 24px 0;
+    margin-top: 70px;
+    border-top: 1px solid #E5E5E5;
+    background-color: #282828;
+}

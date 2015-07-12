@@ -1,0 +1,43 @@
+nav(ng-controller='NavbarCtrl')
+  .nav-wrapper
+    //-a.language(href='#', ng-click="setLocale(setLang)") {{inactiveLang}}
+    .translate.right
+        .switch()
+          label
+            span English
+            input#lang(type="checkbox", ng-click="setLocale(setLang)")
+            span.lever 
+            span Español
+    a.button-collapse(href="#", data-activates="mobile")
+      i.material-icons view_module
+
+
+    ul#nav-mobile.left.hide-on-med-and-down
+      li(ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
+        a(ng-href='{{item.link}}', data-i18n="common.{{item.title}}")
+    ul#mobile.side-nav
+      li(ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
+        a(ng-href='{{item.link}}', data-i18n="common.{{item.title}}")
+
+
+    
+
+      //-   li(ng-show='isAdmin()', ng-class='{active: isActive("/admin")}')
+      //-     a(href='/admin') Admin
+
+      //- ul.nav.navbar-nav.navbar-right
+      //-   li(ng-hide='isLoggedIn()', ng-class='{active: isActive("/signup")}')
+      //-     a(href='/signup') Sign up
+
+      //-   li(ng-hide='isLoggedIn()', ng-class='{active: isActive("/login")}')
+      //-     a(href='/login') Login
+
+      //-   li(ng-show='isLoggedIn()')
+      //-     p.navbar-text Hello {{ getCurrentUser().name }}
+
+      //-   li(ng-show='isLoggedIn()', ng-class='{active: isActive("/settings")}')
+      //-     a(href='/settings')
+      //-       span.glyphicon.glyphicon-cog
+
+      //-   li(ng-show='isLoggedIn()', ng-class='{active: isActive("/logout")}')
+      //-     a(href='', ng-click='logout()') Logout
