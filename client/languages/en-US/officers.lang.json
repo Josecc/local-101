@@ -1,0 +1,16 @@
+{
+	"president": "President",
+	"president-bio": "My bio",
+	"vice-president": "Vice President",
+	"vice-president-bio": "My bio",
+	"treasurer": "Treasurer",
+	"treasurer-bio": "Age, purpose, joined in date",
+	"secretary": "Recording Secretary",
+	"secretary-bio": "My bio",
+	"warden": "Warden",
+	"warden-bio": "My bio",
+	"conductor": "Conductor",
+	"conductor-bio": "My Biooo",
+	"trustees": "Trustees",
+	"delegates": "Council Delegates"
+}

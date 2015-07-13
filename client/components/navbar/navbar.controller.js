@@ -31,15 +31,21 @@ angular.module('local101App')
       'link': '/contacts'
     }];
 
-     $('.slider').slider({full_width: true});
-     $(".button-collapse").sideNav({
-      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-     });
-
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;
     $scope.getCurrentUser = Auth.getCurrentUser;
+
+    $('.button-collapse').sideNav({
+      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    });
+    $('.slider').slider({full_width: true});
+    $('.scrollspy').scrollSpy();
+    if ($('.table-of-contents').length)
+      $('.table-of-contents').pushpin({ top: $('.row').offset().top });
+    $('.modal-trigger').leanModal({
+      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    });
 
     //Language button setting & updating
 
@@ -79,4 +85,6 @@ angular.module('local101App')
     $scope.isActive = function(route) {
       return route === $location.path();
     };
+
+
   });

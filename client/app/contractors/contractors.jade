@@ -1,4 +1,90 @@
 div(ng-include='"components/navbar/navbar.html"')
 
-.col-md-12
-    | This is the contractors view.
+.row
+	//- Main Content
+	.col.s12.m10
+		br
+		h1.center-align.thin.white-text(data-i18n='contractors.contracting')
+		hr
+		.card-panel.blue-grey.darken-1
+			p.flow-text
+				span(data-i18n='contractors.needs')
+				a.modal-trigger(href='#offices', data-i18n='contractors.council-offices')
+		br
+		h1.center-align.thin.white-text(data-i18n='contractors.subcontracting')
+		hr
+		.card-panel.blue-grey.darken-1
+			p.flow-text
+				span(data-i18n='contractors.subContent')
+				a.modal-trigger(href='#list', data-i18n='contractors.here')
+		br
+		h1.center-align.thin.white-text(data-i18n='contractors.visit')
+		hr
+		.card.blue-grey.darken-1
+			.card-content
+				p.flow-text(data-i18n='contractors.visit-content')
+			.card-action
+				p
+					i.material-icons.left phone
+					span phone
+				p
+					i.material-icons.left mail
+					span email
+		br
+		h1.center-align.thin.white-text(data-i18n='contractors.crafts')
+		hr
+		.col.s12.m4(ng-repeat='job in jobs')
+			.card.medium.blue-grey.darken-1
+				.card-image.waves-effect.waves-block.waves-light
+					img.activator(ng-src="assets/images/{{job.name}}.jpg")
+					
+				.card-content
+					p.activator.card-title.white-text
+						span(data-i18n='contractors.{{job.name}}')
+						i.material-icons.right more_vert
+					p
+						a(href="{{job.link}}", target="_blank")
+							span(data-i18n='contractors.read-more')
+							
+				.card-reveal.blue-grey.darken-1
+					span.card-title.grey-text.text-darken-4
+						span(data-i18n='contractors.{{job.name}}')
+						i.material-icons.right close
+					p(data-i18n='contractors.{{job.name}}Content')
+
+	//-END: Main Content
+
+//- MODALS
+#offices.modal.bottom-sheet.blue-grey.darken-1
+	.modal-content
+		ul.collection.with-header
+			li.collection-header
+				h4(data-i18n='contractors.offices')
+			li.collection-item.avatar
+				i.material-icons.circle folder
+				span Local 101
+				p (704) 894 4545
+				= '4587 Dolly Rd. Woodbridge, VA. 22021'
+			li.collection-item.avatar
+				i.material-icons.circle folder
+				span Local 101
+				p (704) 894 4545
+				= '4587 Dolly Rd. Woodbridge, VA. 22021'
+			li.collection-item.avatar
+				i.material-icons.circle folder
+				span Local 101
+				p (704) 894 4545
+				= '4587 Dolly Rd. Woodbridge, VA. 22021'
+	.modal-footer.blue-grey.darken-1
+		a.modal-action.modal-close.waves-effect.waves-red.btn-flat(href="#") Close
+
+#list.modal.modal-fixed-footer
+	.modal-content
+		h4.center-align.thin.uppercase(data-i18n='contractors.receive')
+		
+	.modal-footer
+		a.modal-action.modal-close.waves-effect.waves-red.btn-flat(href="#") Close
+		a.modal-action.modal-close.waves-effect.waves-green.btn-flat(href="#") Submit
+
+//- FOOTER
+div(ng-include='"components/footer/footer.html"')
