@@ -1,8 +1,9 @@
 $light: #E0E4CC;
 $normal: #F38630;
 $highlight: #FA6900;
-$light-blue: #A7DBD8;
+$light-blue: #607d8b;
 $dark-blue: #69D2E7;
+$dark-theme: #292929;
 
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 $fa-font-path: "/bower_components/font-awesome/fonts";
@@ -16,8 +17,19 @@ $navbar-default-link-active-color: white;
 $navbar-default-toggle-hover-bg: darken($normal, 10%);
 $navbar-default-toggle-icon-bar-bg: white;
 $navbar-default-toggle-border-color: white;
-$primary-color: $normal ;
+$primary-color: $normal;
 $secondary-color: darken($dark-blue, 40%);
+$primary-color-dark: true !default;
+$link-color: $normal;
+$slider-indicator-color: $normal;
+// $card-bg-color: $light-blue;
+// $collection-bg-color: $light-blue;
+// $collection-border-color: darken($light-blue, 20%);
+
+.scrollspy {
+    color: white;
+}
+
 
 @import 'materialize/sass/materialize';
 @import 'font-awesome/scss/font-awesome';
@@ -34,6 +46,10 @@ body{
  .navbar-brand:focus {
     color: white !important;
  }
+
+.uppercase {
+    text-transform: uppercase;
+}
 
 .browsehappy {
     margin: 0.2em 0;

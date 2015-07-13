@@ -1,4 +1,93 @@
 div(ng-include='"components/navbar/navbar.html"')
 
-.col-md-12
-    | This is the about-us view.
+.row
+	.col.s12.m10
+		#affiliation.section.scrollspy
+			br
+			.row
+				h1.thin.center-align.white-text(data-i18n="about.affiliation")
+			hr
+			.row
+				.col.s12.m6
+					.card.medium.blue-grey.darken-1
+						.card-image
+							img(src="assets/images/ubc.jpg")
+							span.card-title United Bortherhood of Carpenters
+						.card-content
+							p.white-text(data-i18n="about.ubc")
+						.card-action
+							a(href="https://www.carpenters.org/Home.aspx", target="_blank", data-i18n="about.visit", data-organization="UBC")
+				.col.s12.m6
+					.card.medium.blue-grey.darken-1
+						.card-image
+							img(src="assets/images/regional.jpg")
+							span.card-title Metropolitan Regional Council
+						.card-content
+							p.white-text(data-i18n="about.mrc")
+						.card-action
+							a(href="http://mrccarpenters.org/", target="_blank", data-i18n="about.visit", data-organization="NRC")
+		br
+		#preamble.section.scrollspy
+			.row
+				h1.thin.center-align.white-text(data-i18n="about.preamble")
+			hr
+			.row
+				.card-panel.blue-grey.darken-1
+					p.white-text.center-align(data-i18n="about.preamble-1")
+					p.white-text.center-align(data-i18n="about.preamble-2")
+					p.white-text.center-align(data-i18n="about.preamble-3")
+					p.white-text.center-align(data-i18n="about.preamble-4")
+					p.white-text.center-align(data-i18n="about.preamble-5")
+					p.white-text.center-align(data-i18n="about.preamble-6")
+					p.white-text.center-align(data-i18n="about.preamble-7")
+		br
+		#officers.section.scrollspy
+			.row
+				h1.thin.center-align.white-text(data-i18n="about.local-officers")
+			hr
+			p.flow-text.center-align.white-text Members in our local who wish to serve their union in our local, can do it, by running for an elected position as an officer of this local. (Refer to our UBC Constitution for details).
+			.row
+				.col.s12.m4(ng-repeat='person in officers')
+					.card.small
+						.card-image.waves-effect.waves-block.waves-light
+							img.activator(src="{{person.image}}")
+						.card-content
+							span.card-title.activator.grey-text.text-darken-4 {{person.name}}
+								i.material-icons.right more_vert
+							p(data-i18n="officers.{{person.position}}")
+						.card-reveal
+							span.card-title.grey-text.text-darken-4 {{person.name}}
+								i.material-icons.right close
+							p(data-i18n="officers.{{person.bio}}")
+			.row
+				.col.s12.m6
+					ul.blue-grey.darken-1.collection.with-header.z-depth-1
+						li.collection-header
+							h4.thin(data-i18n="officers.trustees")
+						li.collection-item(ng-repeat='trustee in trustees') {{trustee.name}}
+				.col.s12.m6
+					ul.collection.with-header.z-depth-1
+						li.collection-header
+							h4.thin(data-i18n="officers.delegates")
+						li.collection-item(ng-repeat='delegate in delegates') {{delegate.name}}
+
+		br
+		#location.section.scrollspy
+			.row
+				h1.thin.center-align.white-text(data-i18n="about.location")
+			hr
+			.card-panel.blue-grey.darken-1
+				<iframe style="width: 100% !important" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=801%20W%20Patapsco%20Ave%2C%20Baltimore%2C%20MD%2C%2021230%2C%20United%20States&key=AIzaSyCXhiJgqDTfdVNy1nDLbBQi9OhCf1egGxY"></iframe>
+
+	.col.hide-on-small-only.m2.l2
+		ul.section.table-of-contents
+			li
+				a(href="#affiliation", data-i18n="about.affiliation")
+			li
+				a(href="#preamble", data-i18n="about.preamble")
+			li
+				a(href="#officers", data-i18n="about.local-officers")
+			li
+				a(href="#location", data-i18n="about.location")
+
+div(ng-include='"components/footer/footer.html"')

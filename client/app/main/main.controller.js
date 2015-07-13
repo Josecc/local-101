@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('local101App')
-  .controller('MainCtrl', function ($rootScope, $scope, $http, locale, localeEvents, $modal, $log) {
+  .controller('MainCtrl', function ($scope, $http) {
 
     var slides = $scope.slides = [];
 
@@ -18,24 +18,23 @@ angular.module('local101App')
       $scope.addSlide();
     }
 
+    // $scope.awesomeThings = [];
 
-    $scope.awesomeThings = [];
+    // $http.get('/api/things').success(function(awesomeThings) {
+    //   $scope.awesomeThings = awesomeThings;
+    // });
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-    });
-
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
-        return;
-      }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
-    };
+    // $scope.addThing = function() {
+    //   if($scope.newThing === '') {
+    //     return;
+    //   }
+    //   $http.post('/api/things', { name: $scope.newThing });
+    //   $scope.newThing = '';
+    // };
 
     
 
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
-    };
+    // $scope.deleteThing = function(thing) {
+    //   $http.delete('/api/things/' + thing._id);
+    // };
   });

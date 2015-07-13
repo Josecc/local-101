@@ -1,0 +1,20 @@
+footer(ng-controller='FooterCtrl').page-footer
+  .container
+    .row
+      .col.l6.s12
+        h5.white-text(data-i18n="common.contact")
+        p phone
+        p fax?
+        p address
+      .col.l4.offset-l2.s12
+        h5.white-text(data-i18n="common.site")
+        ul
+          li(ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
+            a.white-text(ng-href='{{item.link}}', data-i18n="common.{{item.title}}")
+  .footer-copyright
+    .container
+      &copy UBC Local 101
+      .right
+        span(data-i18n="main.footer-developed")
+        = " "
+        a.white-text.new.badge(href='https://www.jose-canahui.com/' target='_blank') Jose Canahui
