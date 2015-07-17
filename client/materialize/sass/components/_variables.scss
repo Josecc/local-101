@@ -40,12 +40,12 @@ $dropdown-hover-bg-color: #eee !default;
 $dropdown-color: $secondary-color !default;
 
 /*** Fonts ***/
-$roboto-font-path: "/app/materialize/font/roboto/" !default;
-$icons-font-path: "/app/materialize/font/material-design-icons/" !default;
+$roboto-font-path: "../font/roboto/" !default;
+$icons-font-path: "../font/material-design-icons/" !default;
 
 /*** Forms ***/
 // Text Inputs + Textarea
-$input-border-color: white !default;
+$input-border-color: color("grey", "base") !default;
 $input-bg-color: #fff !default;
 $input-error-color: $error-color !default;
 $input-success-color: $success-color !default;

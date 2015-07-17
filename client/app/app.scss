@@ -27,7 +27,7 @@ $slider-indicator-color: $normal;
 // $collection-border-color: darken($light-blue, 20%);
 
 
-@import 'materialize/sass/materialize';
+@import '../materialize/sass/materialize';
 @import 'font-awesome/scss/font-awesome';
 
 
@@ -91,36 +91,6 @@ body{
 @import 'contacts/contacts.scss';
 @import 'contractors/contractors.scss';
 @import 'main/main.scss';
-@import 'materialize/sass/components/_buttons.scss';
-@import 'materialize/sass/components/_cards.scss';
-@import 'materialize/sass/components/_collapsible.scss';
-@import 'materialize/sass/components/_color.scss';
-@import 'materialize/sass/components/_dropdown.scss';
-@import 'materialize/sass/components/_form.scss';
-@import 'materialize/sass/components/_global.scss';
-@import 'materialize/sass/components/_grid.scss';
-@import 'materialize/sass/components/_icons-material-design.scss';
-@import 'materialize/sass/components/_materialbox.scss';
-@import 'materialize/sass/components/_mixins.scss';
-@import 'materialize/sass/components/_modal.scss';
-@import 'materialize/sass/components/_navbar.scss';
-@import 'materialize/sass/components/_normalize.scss';
-@import 'materialize/sass/components/_prefixer.scss';
-@import 'materialize/sass/components/_preloader.scss';
-@import 'materialize/sass/components/_roboto.scss';
-@import 'materialize/sass/components/_sideNav.scss';
-@import 'materialize/sass/components/_slider.scss';
-@import 'materialize/sass/components/_table_of_contents.scss';
-@import 'materialize/sass/components/_tabs.scss';
-@import 'materialize/sass/components/_toast.scss';
-@import 'materialize/sass/components/_tooltip.scss';
-@import 'materialize/sass/components/_typography.scss';
-@import 'materialize/sass/components/_variables.scss';
-@import 'materialize/sass/components/_waves.scss';
-@import 'materialize/sass/components/date_picker/_default.date.scss';
-@import 'materialize/sass/components/date_picker/_default.scss';
-@import 'materialize/sass/components/date_picker/_default.time.scss';
-@import 'materialize/sass/materialize.scss';
 @import 'members/members.scss';
 @import 'training/training.scss';
 @import 'modal/modal.scss';

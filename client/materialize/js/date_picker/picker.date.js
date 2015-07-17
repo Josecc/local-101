@@ -14,7 +14,7 @@
         module.exports = factory( require('./picker.js'), require('jquery') )
 
     // Browser globals.
-    else factory( Picker, jQuery )
+    //else factory( Picker, jQuery )
 
 }(function( Picker, $ ) {
 
