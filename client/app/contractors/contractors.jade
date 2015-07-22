@@ -36,7 +36,7 @@ div(ng-include='"components/navbar/navbar.html"')
 		.col.s12.m4(ng-repeat='job in jobs')
 			.card.medium
 				.card-image.waves-effect.waves-block.waves-light
-					img.activator(ng-src="assets/images/{{job.name}}.jpg")
+					img.activator(src="{{job.image}}")
 					
 				.card-content
 					p.activator.card-title
