@@ -27,8 +27,8 @@ angular.module('local101App')
       'link': '/training'
     },
     {
-      'title':'contacts',
-      'link': '/contacts'
+      'title':'politics',
+      'link': '/politics'
     }];
 
     $scope.isCollapsed = true;
