@@ -1,6 +1,184 @@
 div(ng-include='"components/navbar/navbar.html"')
 
-.col-md-12
-    | This is the area-standards view.
+.row
+	.col.s12.m10
+		#mission.section.scrollspy
+			br
+			.row
+				h1.thin.center-align Our Mission
+			hr
+			.row
+				.card
+					.card-content
+						p.flow-text.center-align We believe in a fair day’s work for a fair day’s pay. We produce wealth for our contractors and expect a fair share of that wealth. We encourage employers to pay area standard wages and benefits for each area. We discourage and act upon contractors that exploit workers and hurt our way of living.
+
+
+	
+		#misclassification.section.scrollspy
+			.row
+				h1.thin.center-align Worker Misclassification
+			hr
+			.row
+				iframe#player(type="text/html" width="100%" height="400px" src="http://www.youtube.com/embed/mqeLHjyIXzo?autoplay=0&loop=0&showinfo=0&theme=dark&color=red&controls=1&modestbranding=0&start=0&fs=1&iv_load_policy=1&wmode=transparent&rel=1" frameborder="0")
+			
+
+	
+		#abuse.section.scrollspy
+			.row
+				h1.thin.center-align Worker Abuse
+			hr
+			.row
+				.col.s12
+					.card
+						.card-content
+							h6 Sometimes in a desperation or intentional act, contractors look for ways to cut cost an increase profit by cheating the system and offering substandard wages and working conditions. Unfortunately, employees become victims of these acts. Below are some examples of some of the schemes practiced:
+				
+				//- Tabs that will show only on big devices, not phones:
+				.col.s12.hide-on-small-only
+					ul.tabs
+						li.tab.col.s3.active
+							a.truncate(href="#test1") Overtimes
+						li.tab.col.s3
+							a.truncate(href="#test2") Davis Bacon Act
+						li.tab.col.s3
+							a.truncate(href="#test3") Payroll Fraud
+						li.tab.col.s3
+							a.truncate(href="#test4") Work Safety
+				#test1.col.s12.hide-on-small-only
+					.card
+						.card-content
+							span.card-title.black-text Overtimes
+							p In construction, people works usually full time all year round. When working overtime, they get pay time and a half on hours worked after 40 per week, because of federal laws. It is a way to reward the extra effort to get the job done. If you or someone you know are not getting paid overtime, you can apply to recover it. US Department of Labor has an office near you. You can also consult here for a list of worker oriented organizations that provide legal advise and brief services. Doing nothing only rewards bad behavior and increases the problem. It is your time, ACT!
+						.card-action
+							a(target="_blank" href="http://www.dol.gov/whd/resources/kyrvideo.htm") Learn More
+				#test2.col.s12.hide-on-small-only
+					.card
+						.card-content
+							span.card-title.black-text Davis Bacon Act
+							p my content
+						.card-action
+							a(target="_blank" href="http://www.dol.gov/compliance/guide/dbra.htm") Learn More
+				#test3.col.s12.hide-on-small-only
+					.card
+						.card-content
+							span.card-title.black-text Payroll Fraud
+							p my content
+						.card-action
+							a(target="_blank" href="http://www.payrollfraud.net/") Learn More
+				#test4.col.s12.hide-on-small-only
+					.card
+						.card-content
+							span.card-title.black-text Work Safety
+							p my content
+						.card-action
+							a(target="_blank" href="https://www.osha.gov/as/opa/worker/complain.html") Learn More
+			.row.hide-on-med-and-up
+				//-Collapsible that will only be visible in mobile devices (small screens)
+				ul.collapsible(data-collapsible="accordion")
+					li
+						.collapsible-header Overtimes
+						.collapsible-body
+							p.flow-text In construction, people works usually full time all year round. When working overtime, they get pay time and a half on hours worked after 40 per week, because of federal laws. It is a way to reward the extra effort to get the job done. If you or someone you know are not getting paid overtime, you can apply to recover it. US Department of Labor has an office near you. You can also consult here for a list of worker oriented organizations that provide legal advise and brief services. Doing nothing only rewards bad behavior and increases the problem. It is your time, ACT!
+							div.center-align
+								a.waves-effect.waves-light.btn(target="_blank" href="http://www.dol.gov/whd/resources/kyrvideo.htm") Learn More
+							br
+					li
+						.collapsible-header Davis Bacon Act
+						.collapsible-body
+							p.flow-text In construction, people works usually full time all year round. When working overtime, they get pay time and a half on hours worked after 40 per week, because of federal laws. It is a way to reward the extra effort to get the job done. If you or someone you know are not getting paid overtime, you can apply to recover it. US Department of Labor has an office near you. You can also consult here for a list of worker oriented organizations that provide legal advise and brief services. Doing nothing only rewards bad behavior and increases the problem. It is your time, ACT!
+							div.center-align
+								a.waves-effect.waves-light.btn(target="_blank" href="http://www.dol.gov/compliance/guide/dbra.htm") Learn More
+							br
+					li
+						.collapsible-header Payroll Fraud
+						.collapsible-body
+							p.flow-text In construction, people works usually full time all year round. When working overtime, they get pay time and a half on hours worked after 40 per week, because of federal laws. It is a way to reward the extra effort to get the job done. If you or someone you know are not getting paid overtime, you can apply to recover it. US Department of Labor has an office near you. You can also consult here for a list of worker oriented organizations that provide legal advise and brief services. Doing nothing only rewards bad behavior and increases the problem. It is your time, ACT!
+							div.center-align
+								a.waves-effect.waves-light.btn(target="_blank" href="http://www.payrollfraud.net") Learn More
+							br
+					li
+						.collapsible-header Work Safety
+						.collapsible-body
+							p.flow-text In construction, people works usually full time all year round. When working overtime, they get pay time and a half on hours worked after 40 per week, because of federal laws. It is a way to reward the extra effort to get the job done. If you or someone you know are not getting paid overtime, you can apply to recover it. US Department of Labor has an office near you. You can also consult here for a list of worker oriented organizations that provide legal advise and brief services. Doing nothing only rewards bad behavior and increases the problem. It is your time, ACT!
+							div.center-align
+								a.waves-effect.waves-light.btn(target="_blank" href="https://www.osha.gov/as/opa/worker/complain.html") Learn More
+							br
+
+
+	
+		#organizations.section.scrollspy
+			.row
+				h1.thin.center-align Worker Defense Organizations
+			hr
+			.row
+				.col.s12.l4
+					.card
+						.card-content
+							span.card-title.black-text More Justice, Less Poverty
+							p The Legal Aid Justice Center represents workers in disputes involving discrimination, unpaid wages, Family and  Medical Leave Act, and other employment law issues, and assist them with unemployment insurance cases. We also participate in local and statewide efforts to foster increases in minimum and living wage standards, and for other policies that further workers’ rights.
+						.card-action
+							a(href="#" target="_blank") Visit Center
+				.col.s12.l4
+					.card
+						.card-content
+							span.card-title.black-text Employment Justice Center
+							p The Employment Justice Center is working to secure, protect and promote workplace justice in the D.C. metro area.
+						.card-action
+							a(href="#" target="_blank") Visit EJC
+				.col.s12.l4
+					.card
+						.card-content
+							span.card-title.black-text Building a Just Society
+							p The Public Justice Center works with people and communities to confront the laws, practices, and institutions that cause injustice, poverty, and discrimination. We advocate in the courts, legislatures, and government agencies, educate the public, and build coalitions, all to advance our mission of “pursuing systemic change to build a just society.”
+						.card-action
+							a(href="#" target="_blank") Visit PJC
+
+
+	
+		#record-keeping.section.scrollspy
+			.row
+				h1.thin.center-align Record Keeping
+			hr
+			.row
+				ul.collection.with-header
+					li.collection-header
+						h6 Daily Logs:
+							i.secondary-content.material-icons.tiny receipt
+					li.collection-item ◦ Start time
+					li.collection-item ◦ Quit time
+					li.collection-item ◦ Place, floor, type of work performed
+					li.collection-item ◦ Supervisor
+					li.collection-item ◦ Break time and lunch hour
+					li.collection-header
+						h6 Project Information:
+							i.secondary-content.material-icons.tiny announcement
+					li.collection-item ◦ Name
+					li.collection-item ◦ Address
+					li.collection-item ◦ General Contractor 
+					li.collection-item ◦ General Supervisor
+					li.collection-item ◦ Project phone number
+					li.collection-header
+						h6 Employer:
+							i.secondary-content.material-icons.tiny assignment_ind
+					li.collection-item ◦ Company name, address, phone number
+					li.collection-item ◦ Hiring person, telephone, plate number, type of vehicle
+					li.collection-header
+						h6 Employment Conditions:
+							i.secondary-content.material-icons.tiny done_all
+					li.collection-item ◦ Wage rate agreed
+					li.collection-item ◦ Payday and location
+					li.collection-item ◦ Copy of check, paystubs
+	.col.hide-on-small-only.m2.l2
+		ul.section.table-of-contents
+			li
+				a(href="#mission").truncate Mission
+			li
+				a(href="#misclassification").truncate Misclassification
+			li
+				a(href="#abuse").truncate Abuse
+			li
+				a(href="#organizations").truncate Organization
+			li
+				a(href="#record-keeping").truncate Record Keeping
 
 div(ng-include='"components/footer/footer.html"')
