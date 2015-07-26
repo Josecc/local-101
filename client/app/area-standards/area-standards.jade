@@ -19,7 +19,8 @@ div(ng-include='"components/navbar/navbar.html"')
 				h1.thin.center-align Worker Misclassification
 			hr
 			.row
-				iframe#player(type="text/html" width="100%" height="400px" src="http://www.youtube.com/embed/mqeLHjyIXzo?autoplay=0&loop=0&showinfo=0&theme=dark&color=red&controls=1&modestbranding=0&start=0&fs=1&iv_load_policy=1&wmode=transparent&rel=1" frameborder="0")
+				.video-container.no-controls
+					iframe(type="text/html" width="853" height="480px" src="http://www.youtube.com/embed/mqeLHjyIXzo?autoplay=0&loop=0&showinfo=0&theme=dark&color=red&controls=1&modestbranding=0&start=0&fs=1&iv_load_policy=1&wmode=transparent&rel=1" frameborder="0" allowfullscreen)
 			
 
 	
@@ -134,7 +135,123 @@ div(ng-include='"components/navbar/navbar.html"')
 							a(href="#" target="_blank") Visit PJC
 
 
-	
+		#presidents.section.scrollspy
+			.row
+				h1.thin.center-align Presidential Quotes
+			hr
+			.row 
+				//- Tabs that will show only on big devices, not phones:
+				.col.s12.hide-on-small-only
+					ul.tabs
+						li.tab.col.s3.active
+							a.truncate(href="#abraham") Lincoln
+						li.tab.col.s3
+							a.truncate(href="#roosevelt") Roosevelt
+						li.tab.col.s3
+							a.truncate(href="#truman") Truman
+						li.tab.col.s3
+							a.truncate(href="#eisenhower") Eisenhower
+						li.tab.col.s3
+							a.truncate(href="#carter") Carter
+						li.tab.col.s3
+							a.truncate(href="#kennedy") Kennedy
+				#abraham.col.s12.hide-on-small-only.pres
+					.card
+						.card-content
+							.col.s12.m4.pic
+								img.circle.responsive-img(src="assets/images/abe.png")
+							.col.s12.m8
+								blockquote
+									p Labor is prior to, and independent of, capital. Capital is only the fruit of labor, and could never have existed if Labor had not first existed. Labor is superior to capital, and deserves much the higher consideration.
+									footer -
+										cite(title="Abraham Lincoln") Abraham Lincoln 
+								blockquote
+									p If any man tells you he loves America, yet hates labor, he is a liar. If any man tells you he trusts America, yet fears labor, he is a fool.
+									footer -
+										cite(title="Abraham Lincoln") Abraham Lincoln 
+				#roosevelt.col.s12.hide-on-small-only.pres
+					.card
+						.card-content
+							.col.s12.m4.pic
+								img.circle.responsive-img(src="assets/images/franklin.jpg")
+							.col.s12.m8
+								blockquote
+									p No business which depends for existence on paying less than living wages to its workers has any right to continue in this country. By living wages I mean more than a bare subsistence level --I mean the wages of decent living.
+									footer -
+										cite(title="Franklin D. Roosevelt") Franklin D. Roosevelt
+				#truman.col.s12.hide-on-small-only.pres
+					.card
+						.card-content
+							.col.s12.m4.pic
+								img.circle.responsive-img(src="assets/images/harry.jpg")
+							.col.s12.m8
+								blockquote
+									p It is time that all Americans realized that the place of labor is side by side with the businessman and with the farmer, and not one-degree lower.
+									footer -
+										cite(title="Harry S. Truman") Harry s. Truman
+				#eisenhower.col.s12.hide-on-small-only.pres
+					.card
+						.card-content
+							.col.s12.m4.pic 
+								img.circle.responsive-img(src="assets/images/dwight.jpg")
+							.col.s12.m8
+								blockquote
+									p Today in America, unions have a secure place in our industrial life. Only a handful of reactionaries harbor the ugly thought of breaking unions and depriving working men and women of the right to join the union of their choice. I have no use for those -- regardless of their political party -- who hold some vain and foolish dream of spinning the clock back to days when organized labor was huddled, almost as a hapless mass. Only a fool would try to deprive working men and women of the right to join the union of their choice.
+									footer -
+										cite(title="Dwight D. Eisenhower") Dwight D. Eisenhower 
+				#carter.col.s12.hide-on-small-only.pres
+					.card
+						.card-content
+							.col.s12.m4.pic 
+								img.circle.responsive-img(src="assets/images/jimmy.jpg")
+							.col.s12.m8
+								blockquote
+									p Every advance in this half-century--Social Security, civil rights, Medicare, aid to education, one after another--came with the support and leadership of American Labor.
+									footer -
+										cite(title="Jimmy Carter") Jimmy Carter
+				#kennedy.col.s12.hide-on-small-only.pres
+					.card
+						.card-content
+							.col.s12.m4.pic 
+								img.circle.responsive-img(src="assets/images/john.png")
+							.col.s12.m8
+								blockquote
+									p Our labor unions are not narrow, self-seeking groups. They have raised wages, shortened hours, and provided supplemental benefits. Through collective bargaining and grievance procedures, they have brought justice and democracy to the shop floor. 
+									footer -
+										cite(title="John F. Kennedy") John F. Kennedy
+			.row.hide-on-large-only
+				//-Collapsible that will only be visible in mobile devices (small screens)
+				ul.collapsible(data-collapsible="accordion")
+					li
+						.collapsible-header Overtimes
+						.collapsible-body
+							p.flow-text In construction, people works usually full time all year round. When working overtime, they get pay time and a half on hours worked after 40 per week, because of federal laws. It is a way to reward the extra effort to get the job done. If you or someone you know are not getting paid overtime, you can apply to recover it. US Department of Labor has an office near you. You can also consult here for a list of worker oriented organizations that provide legal advise and brief services. Doing nothing only rewards bad behavior and increases the problem. It is your time, ACT!
+							div.center-align
+								a.waves-effect.waves-light.btn(target="_blank" href="http://www.dol.gov/whd/resources/kyrvideo.htm") Learn More
+							br
+					li
+						.collapsible-header Davis Bacon Act
+						.collapsible-body
+							p.flow-text In construction, people works usually full time all year round. When working overtime, they get pay time and a half on hours worked after 40 per week, because of federal laws. It is a way to reward the extra effort to get the job done. If you or someone you know are not getting paid overtime, you can apply to recover it. US Department of Labor has an office near you. You can also consult here for a list of worker oriented organizations that provide legal advise and brief services. Doing nothing only rewards bad behavior and increases the problem. It is your time, ACT!
+							div.center-align
+								a.waves-effect.waves-light.btn(target="_blank" href="http://www.dol.gov/compliance/guide/dbra.htm") Learn More
+							br
+					li
+						.collapsible-header Payroll Fraud
+						.collapsible-body
+							p.flow-text In construction, people works usually full time all year round. When working overtime, they get pay time and a half on hours worked after 40 per week, because of federal laws. It is a way to reward the extra effort to get the job done. If you or someone you know are not getting paid overtime, you can apply to recover it. US Department of Labor has an office near you. You can also consult here for a list of worker oriented organizations that provide legal advise and brief services. Doing nothing only rewards bad behavior and increases the problem. It is your time, ACT!
+							div.center-align
+								a.waves-effect.waves-light.btn(target="_blank" href="http://www.payrollfraud.net") Learn More
+							br
+					li
+						.collapsible-header Work Safety
+						.collapsible-body
+							p.flow-text In construction, people works usually full time all year round. When working overtime, they get pay time and a half on hours worked after 40 per week, because of federal laws. It is a way to reward the extra effort to get the job done. If you or someone you know are not getting paid overtime, you can apply to recover it. US Department of Labor has an office near you. You can also consult here for a list of worker oriented organizations that provide legal advise and brief services. Doing nothing only rewards bad behavior and increases the problem. It is your time, ACT!
+							div.center-align
+								a.waves-effect.waves-light.btn(target="_blank" href="https://www.osha.gov/as/opa/worker/complain.html") Learn More
+							br
+		
+
 		#record-keeping.section.scrollspy
 			.row
 				h1.thin.center-align Record Keeping
@@ -178,6 +295,8 @@ div(ng-include='"components/navbar/navbar.html"')
 				a(href="#abuse").truncate Abuse
 			li
 				a(href="#organizations").truncate Organization
+			li
+				a(href="#presidents").truncate Presidents
 			li
 				a(href="#record-keeping").truncate Record Keeping
 
