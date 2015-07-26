@@ -6,6 +6,9 @@
 		height: 300px;
 		display: table-cell;
 		vertical-align: middle;
+		img {
+			max-height: 200px;
+		}
 	}
 }
 .sm_pres {
