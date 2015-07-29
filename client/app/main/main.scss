@@ -119,10 +119,15 @@
 }
 
 .capcha {
-    display: block;
-    padding: auto;
+    display: inline-block;
+    border: 10px;
+    vertical-align: center;
 }
-
+.join-submit {
+    display: table-cell;
+    vertical-align: center;
+    margin: 10px;
+}
 .footer {
     color: #C8C8C8;
     text-align: center;
