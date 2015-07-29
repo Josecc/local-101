@@ -1,9 +1,7 @@
 footer(ng-controller='FooterCtrl').page-footer
   .container
     .row
-      .col.l1.s12
-
-      .col.l5.s11
+      .col.m5.s11
         h5.white-text(data-i18n="common.contact")
         .col.s1
           p.white-text
@@ -12,19 +10,19 @@ footer(ng-controller='FooterCtrl').page-footer
             i.fa.fa-fax
           p.white-text
             i.fa.fa-map-marker
-        .col.s11
+        .col.s11.m10
           p.white-text 410-355-5555
           p.white-text 410-355-0620
           p.white-text 801 West Patapsco Avenue 
           p.white-text Baltimore, MD 21230
-      .col.l3.offset-l3.s12
+      .col.m4.l3.offset-m2.offset-l3.s12
         h5.white-text(data-i18n="common.site")
-        .col.s1.m1.l1
+        .col.s1.m1
           ul
             li(ng-repeat='item in menu')
               a(ng-href='{{item.link}}').white-text
                 i.fa.fa-arrow-circle-o-right
-        .col.s11.l10
+        .col.s11.m10
           ul
             li(ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
               a.white-text(ng-href='{{item.link}}', data-i18n="common.{{item.title}}")
