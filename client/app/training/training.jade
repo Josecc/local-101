@@ -1,6 +1,40 @@
 div(ng-include='"components/navbar/navbar.html"')
 
-.col-md-12
-    | This is the training view.
-
+.row
+	.col.s12.m10
+		#classes.section.scrollspy
+			br
+			.row
+				h1.thin.center-align Journeyman Upgrade Classes
+			hr
+			.row
+				.col.s12
+					.card
+						.card-content
+							span.card-title.black-text Come train to...
+							p ...be the best you can be. Strenthen your knowledge and be more employable and competitive by keeping up with your qualifications and certifications.
+							span.card-title.black-text Free Classes!
+							p Classes are at not cost to you, but offered only to union members. Please keep your card current. You will be issued full color textbooks and will be taught at top of the line installations with highly qualified instructors. We are aiming to best serve the industry needs.
+							span.card-title.black-text Whats left? Register.
+							p Take a look below, then call 
+								a(href="callto:3017361696") (301) 736 - 1696.
+						.card-action
+							a(href="#", target="_blank",) Summer 2015 Classes
+							a(href="#", target="_blank") Fall 2015 Classes
+		br
+		#card.section.scrollspy
+			.row
+				h1.thin.center-align Training Verification Card
+			hr
+			.row
+				.card-panel
+					p The Carpenter International Training Fund has begun sending members a Personal Training Verification Card (TVC). The purpose of this card is to act as a single source to verify all of our members certifications. Simply scan the QR Code on the face of the card with one of the many barcode apps available for smart phones. You will then be taken to a personal webpage listing all of your certifications with the Labor Technical College.
+					p Important: In order to receive this TVC card, you will have to take any certification or qualification class first, and your union card has to be current.  Pictures are taken at a training center near you.  GET YOURS NOW!
+					img.responsive-img(src="assets/images/verification_cards.png")
+	.col.hide-on-small-only.m2.l2
+		ul.section.table-of-contents
+			li
+				a(href="#classes") Classes
+			li
+				a(href="#card") Verification Card
 div(ng-include='"components/footer/footer.html"')
