@@ -35,16 +35,17 @@ angular.module('local101App')
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;
     $scope.getCurrentUser = Auth.getCurrentUser;
-
-    $('.button-collapse').sideNav({
-      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-    });
-    $('.slider').slider({full_width: true});
-    $('.scrollspy').scrollSpy();
-    if ($('.table-of-contents').length)
-      $('.table-of-contents').pushpin({ top: $('.row').offset().top });
-    $('.modal-trigger').leanModal({
-      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    $( function() {
+      $('.button-collapse').sideNav({
+        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      });
+      $('.slider').slider({full_width: true});
+      $('.scrollspy').scrollSpy();
+      if ($('.table-of-contents').length > 0)
+        $('.table-of-contents').pushpin({ top: $('.row').offset().top });
+      $('.modal-trigger').leanModal({
+        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      });
     });
 
     //Language button setting & updating
