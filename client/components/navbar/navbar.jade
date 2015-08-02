@@ -1,13 +1,14 @@
 nav(ng-controller='NavbarCtrl')
   .nav-wrapper
     //-a.language(href='#', ng-click="setLocale(setLang)") {{inactiveLang}}
-    .translate.right
-        .switch()
-          label
-            span English
-            input#lang(type="checkbox", ng-click="setLocale(setLang)")
-            span.lever 
-            span Español
+    //- .translate.right
+    //-     .switch()
+    //-       label
+    //-         span English
+    //-         input#lang(type="checkbox", ng-click="setLocale(setLang)")
+    //-         span.lever 
+    //-         span 
+    a.right.language(href='#', ng-click="setLocale(setLang)") {{inactiveLang}}
     a.button-collapse(href="#", data-activates="mobile")
       i.material-icons view_module
 

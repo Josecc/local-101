@@ -86,9 +86,11 @@ h1 {
     text-align: center;
     width: 100px;
     vertical-align: middle;
-    display:t able-cell;
+    display:    table-cell;
+    font-size: 18px;
     transform: scale(.65);
     transition: .1s ease-in-out;
+    margin-top: -2px;
 
  	&:hover {
  		background-color: white !important;
