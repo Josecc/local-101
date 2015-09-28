@@ -86,6 +86,7 @@ angular.module('local101App')
         fileUpload.uploadFileToUrl(file, "/api/headerPicture");
         $http.post('/api/headerCaptions', {caption: $scope.header.caption}).then(function(res) {
           $scope.header.picture = null;
+          $scope.header.caption = '';
           Materialize.toast('File uploaded!', 4000, 'rounded');
         }, function(err) {
           Materialize.toast('ERROR: "' + err.status + '"', 4000, 'rounded');
