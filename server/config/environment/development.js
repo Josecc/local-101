@@ -8,5 +8,9 @@ module.exports = {
     uri: 'mongodb://localhost/local101-dev'
   },
 
+  upload: {
+  	path: 'client/'
+  },
+
   seedDB: true
 };

@@ -25,10 +25,6 @@ angular.module('local101App')
     {
       'title':'training',
       'link': '/training'
-    },
-    {
-      'title':'politics',
-      'link': '/politics'
     }];
 
     $scope.isCollapsed = true;
@@ -36,10 +32,10 @@ angular.module('local101App')
     $scope.isAdmin = Auth.isAdmin;
     $scope.getCurrentUser = Auth.getCurrentUser;
     $( function() {
+      $('.slider').slider({full_width: true});
       $('.button-collapse').sideNav({
         closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
       });
-      $('.slider').slider({full_width: true});
       $('.scrollspy').scrollSpy();
       if ($('.table-of-contents').length > 0)
         $('.table-of-contents').pushpin({ top: $('.row').offset().top });

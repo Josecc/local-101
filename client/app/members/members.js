@@ -6,6 +6,7 @@ angular.module('local101App')
       .state('members', {
         url: '/members',
         templateUrl: 'app/members/members.html',
-        controller: 'MembersCtrl'
+        controller: 'MembersCtrl',
+        authenticate: true
       });
   });

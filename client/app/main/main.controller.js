@@ -5,17 +5,27 @@ angular.module('local101App')
 
     var slides = $scope.slides = [];
 
-    $scope.addSlide = function() {
+    $scope.addSlide = function(index) {
       var newWidth = 600 + slides.length + 1;
       slides.push({
-        image: 'http://placekitten.com/' + newWidth + '/300',
-        text: ['More','Extra','Lots of','Surplus'][slides.length % 4] + ' ' +
-          ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
+        image: '/assets/images/header-' + index + '.jpg'
       });
     };
 
+    $http.get('/api/headerCaptions').then(function(res) {
+      $scope.captions = res.data;
+    }, function(err) {
+      console.log(err);
+    });
+
+    $http.get('/api/publicNews').then(function(res) {
+      $scope.news = res.data;
+    }, function(err) {
+      console.log(err);
+    });
+
     for (var i=0; i<4; i++) {
-      $scope.addSlide();
+      $scope.addSlide(i);
     }
 
     // $scope.awesomeThings = [];

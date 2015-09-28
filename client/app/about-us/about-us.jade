@@ -50,7 +50,8 @@ div(ng-include='"components/navbar/navbar.html"')
 				.col.s12.m4(ng-repeat='person in officers')
 					.card.small
 						.card-image.waves-effect.waves-block.waves-light
-							img.activator(src="{{person.image}}")
+							img.activator(ng-show='person.image', src="{{person.image}}")
+							img.activator(ng-show='!person.image', src='assets/images/user.png')
 						.card-content
 							span.card-title.activator.grey-text.text-darken-4 {{person.name}}
 								i.material-icons.right more_vert
@@ -58,7 +59,7 @@ div(ng-include='"components/navbar/navbar.html"')
 						.card-reveal
 							span.card-title.grey-text.text-darken-4 {{person.name}}
 								i.material-icons.right close
-							p(data-i18n="officers.{{person.bio}}")
+							p {{person.bio}}
 			.row
 				.col.s12.m6
 					ul.collection.with-header.z-depth-1

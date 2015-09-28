@@ -1,29 +1,43 @@
 'use strict';
 
 angular.module('local101App')
-  .controller('MembersCtrl', function ($scope, Auth, $location, $window) {
+  .controller('MembersCtrl', function ($scope, Auth, $location, $http) {
     $scope.user = {};
     $scope.errors = {};
+    $scope.isAdmin = Auth.isAdmin;
 
-    $scope.login = function(form) {
-      $scope.submitted = true;
+    $( function() {
+      $('.dropdown-button').dropdown({
+  			inDuration: 300,
+  			outDuration: 225,
+  			constrain_width: false, // Does not change width of dropdown to that of the activator
+  			hover: true, // Activate on hover
+  			gutter: 0, // Spacing from edge
+  			belowOrigin: false // Displays dropdown below the button
+  	    }
+      );
+    });
+    $http.get('/api/privateNews').then(function(res) {
+      $scope.news = res.data;
+    }, function(err) {
+      console.log(err);
+    });
 
-      if(form.$valid) {
-        Auth.login({
-          email: $scope.user.email,
-          password: $scope.user.password
-        })
-        .then( function() {
-          // Logged in, redirect to home
-          $location.path('/');
-        })
-        .catch( function(err) {
-          $scope.errors.other = err.message;
-        });
-      }
+    $http.get('/api/events').then(function(res) {
+      $scope.events = res.data;
+    }, function(err) {
+      console.log(err);
+    });
+
+    $http.get('/api/boycotts').then(function(res) {
+      $scope.boycotts = res.data;
+    }, function(err) {
+      console.log(err);
+    });
+
+    $scope.logout = function() {
+      Auth.logout();
+      $location.path('/login');
     };
 
-    $scope.loginOauth = function(provider) {
-      $window.location.href = '/auth/' + provider;
-    };
   });

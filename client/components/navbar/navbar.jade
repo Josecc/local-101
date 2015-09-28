@@ -20,6 +20,15 @@ nav(ng-controller='NavbarCtrl')
       li(ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
         a(ng-href='{{item.link}}', data-i18n="common.{{item.title}}")
 
+    ul#dropdown1.dropdown-content
+      li
+        a(href="/admin") Admin
+      li
+        a(href="#!", ng-click="logout()") Logout
+      li.divider
+      li Hello {{user.name}}
+      script   $('.dropdown-button').dropdown({ inDuration: 300, outDuration: 225, constrain_width: false, hover: true, gutter: 0, belowOrigin: false });
+
 
     
 
