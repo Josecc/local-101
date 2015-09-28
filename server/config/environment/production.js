@@ -22,5 +22,6 @@ module.exports = {
   },
   upload: {
     path: 'public/'
-  }
+  },
+  seedDB: true
 };
