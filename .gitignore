@@ -6,3 +6,7 @@ public
 client/bower_components
 dist
 /server/config/local.env.js
+client/assets/images/header-0.jpg
+client/assets/images/header-1.jpg
+client/assets/images/header-2.jpg
+client/assets/images/header-3.jpg
