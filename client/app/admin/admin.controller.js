@@ -101,7 +101,7 @@ angular.module('local101App')
     * Notes: $scope.news.privacy tells whether the news is private or not
     */
     $scope.broadcast = function() {
-      var destination = ($scope.news.privacy) ? '/api/privateNews' : '/api/publicNews';
+      var destination = ($scope.news.privacy == 'true') ? '/api/privateNews' : '/api/publicNews';
       var data = {
         heading: $scope.news.heading,
         details: $scope.news.description,
