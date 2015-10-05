@@ -30,7 +30,7 @@ angular.module('local101App')
       console.log("hello");
     }
 
-    for (var i=0; i<4; i++) {
+    for (var i=0; i<10; i++) {
       $scope.addSlide(i);
     }
 

@@ -10,20 +10,39 @@ var config = require('../../config/environment');
 
 var router = express.Router();
 
+//This looks like carp. like really. Horrible. but it works... so I mean whatever, but EW.
 router.post('/', function (req, res) {
 	var form = new formidable.IncomingForm();
 	form.on('file', function(name, file) {
-		fs.unlink(config.upload.path + 'assets/images/header-3.jpg', function(err) {
+		fs.unlink(config.upload.path + 'assets/images/header-9.jpg', function(err) {
 			if(err) { console.log(err); }
-      		fs.rename(config.upload.path + 'assets/images/header-2.jpg', config.upload.path + 'assets/images/header-3.jpg', function(err) {
+      		fs.rename(config.upload.path + 'assets/images/header-8.jpg', config.upload.path + 'assets/images/header-9.jpg', function(err) {
 		     	if(err) { console.log(err); }
-		     	fs.rename(config.upload.path + 'assets/images/header-1.jpg', config.upload.path + 'assets/images/header-2.jpg', function(err) {
+		     	fs.rename(config.upload.path + 'assets/images/header-7.jpg', config.upload.path + 'assets/images/header-8.jpg', function(err) {
 			     	if(err) { console.log(err); }
-			     	fs.rename(config.upload.path + 'assets/images/header-0.jpg', config.upload.path + 'assets/images/header-1.jpg', function(err) {
+			     	fs.rename(config.upload.path + 'assets/images/header-6.jpg', config.upload.path + 'assets/images/header-7.jpg', function(err) {
 				     	if(err) { console.log(err); }
-				     	fs.rename(file.path, config.upload.path + 'assets/images/header-0.jpg', function(err) {
-							if(err) { console.log(err); }
-						});
+				     	fs.rename(config.upload.path + 'assets/images/header-5.jpg', config.upload.path + 'assets/images/header-6.jpg', function(err) {
+					     	if(err) { console.log(err); }
+					     	fs.rename(config.upload.path + 'assets/images/header-4.jpg', config.upload.path + 'assets/images/header-5.jpg', function(err) {
+						     	if(err) { console.log(err); }
+						     	fs.rename(config.upload.path + 'assets/images/header-3.jpg', config.upload.path + 'assets/images/header-4.jpg', function(err) {
+							     	if(err) { console.log(err); }
+							     	fs.rename(config.upload.path + 'assets/images/header-2.jpg', config.upload.path + 'assets/images/header-3.jpg', function(err) {
+								     	if(err) { console.log(err); }
+								     	fs.rename(config.upload.path + 'assets/images/header-1.jpg', config.upload.path + 'assets/images/header-2.jpg', function(err) {
+									     	if(err) { console.log(err); }
+									     	fs.rename(config.upload.path + 'assets/images/header-0.jpg', config.upload.path + 'assets/images/header-1.jpg', function(err) {
+										     	if(err) { console.log(err); }
+										     	fs.rename(file.path, config.upload.path + 'assets/images/header-0.jpg', function(err) {
+													if(err) { console.log(err); }
+												});
+										    });
+									    });
+								    });
+							    });
+						    });
+					    });
 				    });
 			    });
 		    });

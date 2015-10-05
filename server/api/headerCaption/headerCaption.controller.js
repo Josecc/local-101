@@ -5,7 +5,7 @@ var HeaderCaption = require('./headerCaption.model');
 
 // Get list of headerCaptions
 exports.index = function(req, res) {
-  HeaderCaption.find().sort({'date': -1}).limit(4).exec(function (err, headerCaptions) {
+  HeaderCaption.find().sort({'date': -1}).limit(10).exec(function (err, headerCaptions) {
     if(err) { return handleError(res, err); }
     return res.json(200, headerCaptions);
   });
