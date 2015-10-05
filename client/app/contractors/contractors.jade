@@ -26,10 +26,12 @@ div(ng-include='"components/navbar/navbar.html"')
 			.card-action
 				p
 					i.material-icons.left phone
-					span phone
+					span 
+						a(htef="callto:3017361696") (301) 736-1696
 				p
-					i.material-icons.left mail
-					span email
+					i.material-icons.left language
+					span
+						a(href="http://mactc.net/Default.aspx", target="_blank") mactc.net
 		br
 		h1.center-align.thin(data-i18n='contractors.crafts')
 		hr
@@ -63,18 +65,8 @@ div(ng-include='"components/navbar/navbar.html"')
 			li.collection-item.avatar
 				i.material-icons.circle folder
 				span Local 101
-				p (704) 894 4545
-				= '4587 Dolly Rd. Woodbridge, VA. 22021'
-			li.collection-item.avatar
-				i.material-icons.circle folder
-				span Local 101
-				p (704) 894 4545
-				= '4587 Dolly Rd. Woodbridge, VA. 22021'
-			li.collection-item.avatar
-				i.material-icons.circle folder
-				span Local 101
-				p (704) 894 4545
-				= '4587 Dolly Rd. Woodbridge, VA. 22021'
+				p (410) 355 5555
+				= '801 West Patapsco Avenue Baltimore, MD 21230'
 	.modal-footer
 		a.modal-action.modal-close.waves-effect.waves-red.btn-flat(href="#") Close
 

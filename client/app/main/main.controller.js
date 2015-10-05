@@ -4,6 +4,7 @@ angular.module('local101App')
   .controller('MainCtrl', function ($scope, $http) {
 
     var slides = $scope.slides = [];
+    $scope.join = {};
 
     $scope.addSlide = function(index) {
       var newWidth = 600 + slides.length + 1;
@@ -23,6 +24,11 @@ angular.module('local101App')
     }, function(err) {
       console.log(err);
     });
+
+    $scope.join.submit = function() {
+      console.log($scope.join.pay);
+      console.log("hello");
+    }
 
     for (var i=0; i<4; i++) {
       $scope.addSlide(i);

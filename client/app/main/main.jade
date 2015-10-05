@@ -34,45 +34,45 @@ div.slider
     .card-title
       h1.center-align.thin.black-text JOIN OUR MOVEMENT!
       .card-content
-        .join-form.row
+        .join-form.row(name='joinForm', ng-submit='join.submit()')
           .col.s12.m7
             .input-field
               i.black-text.material-icons.prefix account_circle
-              input#full_name(type="email")
+              input#full_name(ng-model="join.name", type="email")
               label(for="full_name") Full Name
             .input-field
               i.black-text.material-icons.prefix email
-              input#email.validate(type="email")
+              input#email.validate(ng-model="join.email", type="email")
               label(for="email") Email
             .input-field
               i.black-text.material-icons.prefix phone
-              input#phone(type="email")
+              input#phone(ng-model="join.phone", type="text")
               label(for="phone") Cell Phone
             .input-field
               i.black-text.material-icons.prefix assignment_ind
-              input#trade(type="email")
+              input#trade(ng-model="join.trade", type="text")
               label(for="trade") Trade
 
           .col.s12.m4.offset-m1.checkboxes
             h5.offset-s2.thin.black-text Mark Your Interests:
 
             p
-              input.filled-in(type="checkbox", id="apprenticeship")
+              input.filled-in(type="checkbox", ng-model="join.apprenticeship", id="apprenticeship")
               label(for="apprenticeship") Apprenticeship
             p
-              input.filled-in(type="checkbox", id="Certifications")
+              input.filled-in(type="checkbox", ng-model="join.certifications", id="Certifications")
               label(for="Certifications") Certifications
             p
-              input.filled-in(type="checkbox", id="Fair Wages")
+              input.filled-in(type="checkbox", ng-model="join.wages", id="Fair Wages")
               label(for="Fair Wages") Fair Wages
             p
-              input.filled-in(type="checkbox", id="Overtime Pay")
+              input.filled-in(type="checkbox", ng-model="join.pay", id="Overtime Pay")
               label(for="Overtime Pay") Overtime Pay
             p
-              input.filled-in(type="checkbox", id="Medical Inusrence")
+              input.filled-in(type="checkbox", ng-model="join.medical", id="Medical Inusrence")
               label(for="Medical Inusrence") Medical Inusrence
             p
-              input.filled-in(type="checkbox", id="Retirement")
+              input.filled-in(type="checkbox", ng-model="join.retirement", id="Retirement")
               label(for="Retirement") Retirement
       .card-action
         .col.s12.m7.center-align
