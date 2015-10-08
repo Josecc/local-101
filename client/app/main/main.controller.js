@@ -1,7 +1,25 @@
 'use strict';
 
 angular.module('local101App')
-  .controller('MainCtrl', function ($scope, $http) {
+  .controller('MainCtrl', function ($scope, locale, $http, localeEvents, $sce) {
+
+    var updateLang = function(language, text) {
+      if (language === "en-US") {
+        $scope.english = true;
+
+      }
+      else {
+        $scope.english = false;
+      }
+    }
+
+    //Initial update
+    updateLang(locale.getLocale());
+
+    //Button change update
+    $scope.$on(localeEvents.localeChanges, function (event, data) {
+       updateLang(data);
+    });
 
     var slides = $scope.slides = [];
     $scope.join = {};

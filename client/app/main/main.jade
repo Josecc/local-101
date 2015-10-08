@@ -28,7 +28,14 @@ div.slider
         p {{announcement.details}}
       .card-action
         a(href="{{announcement.url}}" target="_blank") Read More
+        //https://www.youtube.com/watch?v=3-X5hCxdaLc?rel=0;autohide=1
 
+.row(ng-show="english")
+  .video-container.no-controls
+    iframe(width="853" height="480" src="//www.youtube.com/embed/3-X5hCxdaLc?rel=0;autohide=1" frameborder="0" allowfullscreen)
+.row(ng-show="!english")
+  .video-container.no-controls
+    iframe(width="853" height="480" src="//www.youtube.com/embed/iaBCBXy600E?rel=0;autohide=1" frameborder="0" allowfullscreen)
 .row
   .card
     .card-title
