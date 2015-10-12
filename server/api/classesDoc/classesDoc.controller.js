@@ -6,9 +6,8 @@ var fs = require('fs');
 
 // Get list of classesDocs
 exports.index = function(req, res) {
-  var stream =  '/Users/fonderjose/Projects/UBC/local-101/client/assets/documents/classes.pdf';
-  res.setHeader('content-type','application/pdf');
-    res.download(stream);
+  var stream = __dirname + '/classes.pdf';
+  res.sendfile(stream)
 };
 
 // Get a single classesDoc
