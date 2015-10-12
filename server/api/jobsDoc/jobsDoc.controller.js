@@ -1,33 +1,33 @@
 'use strict';
 
 var _ = require('lodash');
-var ClassesDoc = require('./classesDoc.model');
+var JobsDoc = require('./jobsDoc.model');
 var fs = require('fs');
 var formidable = require('formidable');
 var config = require('../../config/environment');
 var util = require('util');
 
-// Get list of classesDocs
+// Get list of jobsDocs
 exports.index = function(req, res) {
-  var stream = config.upload.path + 'assets/documents/classes.pdf';
+  var stream = config.upload.path + 'assets/documents/jobs.docx';
   res.sendfile(stream);
 };
 
-// Get a single classesDoc
+// Get a single jobsDoc
 exports.show = function(req, res) {
-  ClassesDoc.findById(req.params.id, function (err, classesDoc) {
+  JobsDoc.findById(req.params.id, function (err, jobsDoc) {
     if(err) { return handleError(res, err); }
-    if(!classesDoc) { return res.send(404); }
-    return res.json(classesDoc);
+    if(!jobsDoc) { return res.send(404); }
+    return res.json(jobsDoc);
   });
 };
 
-// Creates a new classesDoc in the DB.
+// Creates a new jobsDoc in the DB.
 exports.create = function(req, res) {
   var form = new formidable.IncomingForm();
   form.on('file', function(name, file) {
-    fs.unlink(config.upload.path + 'assets/documents/classes.pdf', function(err) {
-      fs.rename(file.path, config.upload.path + 'assets/documents/classes.pdf', function(err) {
+    fs.unlink(config.upload.path + 'assets/documents/jobs.docx', function(err) {
+      fs.rename(file.path, config.upload.path + 'assets/documents/jobs.docx', function(err) {
         if(err) { console.log(err); }
       });
     });
@@ -40,26 +40,26 @@ exports.create = function(req, res) {
   });
 };
 
-// Updates an existing classesDoc in the DB.
+// Updates an existing jobsDoc in the DB.
 exports.update = function(req, res) {
   if(req.body._id) { delete req.body._id; }
-  ClassesDoc.findById(req.params.id, function (err, classesDoc) {
+  JobsDoc.findById(req.params.id, function (err, jobsDoc) {
     if (err) { return handleError(res, err); }
-    if(!classesDoc) { return res.send(404); }
-    var updated = _.merge(classesDoc, req.body);
+    if(!jobsDoc) { return res.send(404); }
+    var updated = _.merge(jobsDoc, req.body);
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
-      return res.json(200, classesDoc);
+      return res.json(200, jobsDoc);
     });
   });
 };
 
-// Deletes a classesDoc from the DB.
+// Deletes a jobsDoc from the DB.
 exports.destroy = function(req, res) {
-  ClassesDoc.findById(req.params.id, function (err, classesDoc) {
+  JobsDoc.findById(req.params.id, function (err, jobsDoc) {
     if(err) { return handleError(res, err); }
-    if(!classesDoc) { return res.send(404); }
-    classesDoc.remove(function(err) {
+    if(!jobsDoc) { return res.send(404); }
+    jobsDoc.remove(function(err) {
       if(err) { return handleError(res, err); }
       return res.send(204);
     });
