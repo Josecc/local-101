@@ -6,17 +6,9 @@ var fs = require('fs');
 
 // Get list of classesDocs
 exports.index = function(req, res) {
-  fs.stat('./../../../client/assets/documents/classes.pdf', function(e, stats) {
-    if(e) throw e;
-
-    var stream = fs.createReadStream( './some-pdf.pdf' );
-
-    res.setHeader('Content-disposition', 'inline; filename="some-pdf.pdf"');
-    res.setHeader('Content-Length', stats.size);
-    res.setHeader('Content-type', 'application/pdf');
-
-    stream.pipe(res);
-  });
+  var stream =  '/Users/fonderjose/Projects/UBC/local-101/client/assets/documents/classes.pdf';
+  res.setHeader('content-type','application/pdf');
+    res.download(stream);
 };
 
 // Get a single classesDoc
