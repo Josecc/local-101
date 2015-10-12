@@ -32,7 +32,7 @@
 
 #banner {
     border-bottom: none;
-    margin-top: 10px;
+    margin-top: 2px;
     font-family: "futura-pt",sans-serif;
     font-weight: 400;
     //background-color: blue;
@@ -50,6 +50,13 @@
     font-weight: 400;
 }
 
+.logo {
+    height: 100px;
+    width: 100px;
+    margin-top: -30px;
+}
+
+
 .news {
     border-top: solid 1px $normal;
     color: $normal;
@@ -63,6 +70,7 @@
     position: relative;
     padding: 30px 15px;
     color: white;
+    background-image: url('/assets/images/wood.png');
     text-align: center;
     display: table;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);

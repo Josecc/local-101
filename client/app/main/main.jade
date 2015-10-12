@@ -2,7 +2,11 @@ div(ng-include='"components/navbar/navbar.html"')
 
 header#banner.hero-unit
   .container.head
+    image.logo(src="assets/images/logo.png")
     h1(data-i18n="main.header-title").teal-text
+    p.lead.flow-text
+      b Baltimore, Md.
+      //- (data-i18n="main.header-bottom")
     p.flow-text.lead(data-i18n="main.header-content").teal-text
     p.lead.flow-text
       b(data-i18n="main.header-bottom")
