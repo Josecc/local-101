@@ -3,58 +3,81 @@ div(ng-include='"components/navbar/navbar.html"')
 .row
 	//- Main Content
 	.col.s12.m10
+		#contracting.section.scrollspy
+			br
+			.row
+				h1.center-align.thin(data-i18n='contractors.contracting')
+			hr
+			.row
+				.card-panel
+					p.flow-text
+						span(data-i18n='contractors.needs')
+						a.modal-trigger(href='#offices', data-i18n='contractors.council-offices')
 		br
-		h1.center-align.thin(data-i18n='contractors.contracting')
-		hr
-		.card-panel
-			p.flow-text
-				span(data-i18n='contractors.needs')
-				a.modal-trigger(href='#offices', data-i18n='contractors.council-offices')
+		#subcontracting.section.scrollspy
+			.row
+				h1.center-align.thin(data-i18n='contractors.subcontracting')
+			hr
+			.row
+				.card-panel
+					p.flow-text
+						span(data-i18n='contractors.subContent')
+						a.modal-trigger(href='#list', data-i18n='contractors.here')
 		br
-		h1.center-align.thin(data-i18n='contractors.subcontracting')
-		hr
-		.card-panel
-			p.flow-text
-				span(data-i18n='contractors.subContent')
-				a.modal-trigger(href='#list', data-i18n='contractors.here')
+		#visit.section.scrollspy
+			.row
+				h1.center-align.thin(data-i18n='contractors.visit')
+			hr
+			.row
+				.card
+					.card-content
+						p.flow-text(data-i18n='contractors.visit-content')
+					.card-action
+						p
+							i.material-icons.left phone
+							span 
+								a(htef="callto:3017361696") (301) 736-1696
+						p
+							i.material-icons.left language
+							span
+								a(href="http://mactc.net/Default.aspx", target="_blank") mactc.net
 		br
-		h1.center-align.thin(data-i18n='contractors.visit')
-		hr
-		.card
-			.card-content
-				p.flow-text(data-i18n='contractors.visit-content')
-			.card-action
-				p
-					i.material-icons.left phone
-					span 
-						a(htef="callto:3017361696") (301) 736-1696
-				p
-					i.material-icons.left language
-					span
-						a(href="http://mactc.net/Default.aspx", target="_blank") mactc.net
-		br
-		h1.center-align.thin(data-i18n='contractors.crafts')
-		hr
-		.col.s12.m6.l4(ng-repeat='job in jobs')
-			.card.medium
-				.card-image.waves-effect.waves-block.waves-light
-					img.activator(src="{{job.image}}")
-					
-				.card-content
-					p.activator.card-title
-						span(data-i18n='contractors.{{job.name}}')
-						i.material-icons.right more_vert
-					p
-						a(href="{{job.link}}", target="_blank")
-							span(data-i18n='contractors.read-more')
+		#crafts.section.scrollspy
+			.row
+				h1.center-align.thin(data-i18n='contractors.crafts')
+			hr
+			.row
+				.col.s12.m6.l4(ng-repeat='job in jobs')
+					.card.medium
+						.card-image.waves-effect.waves-block.waves-light
+							img.activator(src="{{job.image}}")
 							
-				.card-reveal
-					span.card-title.grey-text.text-darken-4
-						span(data-i18n='contractors.{{job.name}}')
-						i.material-icons.right close
-					p(data-i18n='contractors.{{job.name}}Content')
+						.card-content
+							p.activator.card-title
+								span(data-i18n='contractors.{{job.name}}')
+								i.material-icons.right more_vert
+							p
+								a(href="{{job.link}}", target="_blank")
+									span(data-i18n='contractors.read-more')
+									
+						.card-reveal
+							span.card-title.grey-text.text-darken-4
+								span(data-i18n='contractors.{{job.name}}')
+								i.material-icons.right close
+							p(data-i18n='contractors.{{job.name}}Content')
 
 	//-END: Main Content
+
+	.col.hide-on-small-only.m2
+		ul.section.table-of-contents
+			li
+				a(href="#contracting", data-i18n='contractors.contracting-menu')
+			li
+				a(href="#subcontracting", data-i18n='contractors.subcontracting')
+			li
+				a(href="#visit", data-i18n='contractors.visit-menu')
+			li
+				a(href="#crafts", data-i18n='contractors.crafts')
 
 //- MODALS
 #offices.modal.bottom-sheet
