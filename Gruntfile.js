@@ -365,6 +365,7 @@ module.exports = function (grunt) {
             'index.html',
             'languages/**/*',
             'materialize/js/**/*',
+            'assets/documents/*.pdf',
             'font/**/*'
           ]
         }, {
