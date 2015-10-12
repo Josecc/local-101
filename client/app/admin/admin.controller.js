@@ -240,17 +240,23 @@ angular.module('local101App')
     //uploadDocument
     $scope.uploadDocument = function() {
       var file = $scope.document.file;
-      var destination = $scope.document.type ? "/api/availableJobs" : "/api/classes";
-      if($scope.document.type == 'true'){
+      var destination = $scope.document.type ? "/api/availableJobs" : "/api/classesDocs";
+      if($scope.document.type){
         if($scope.document.file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
           fileUpload.uploadFileToUrl(file, destination);
         else {
           Materialize.toast('ERROR: must end in ".docx"', 4000, 'rounded');
         }
       } else {
-        if($scope.document.file.type == "application/pdf")
+        if($scope.document.file.type == "application/pdf"){
           fileUpload.uploadFileToUrl(file, destination);
-        else {
+          $http.post('/api/classesDocs').then(function(res) {
+            $scope.document.file = null;
+            Materialize.toast('File uploaded!', 4000, 'rounded');
+          }, function(err) {
+            Materialize.toast('ERROR: "' + err.status + '"', 4000, 'rounded');
+          });
+        } else {
           Materialize.toast('ERROR: must end in ".pdf"', 4000, 'rounded');
         }
       }

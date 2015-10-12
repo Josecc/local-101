@@ -3,10 +3,13 @@
 var _ = require('lodash');
 var ClassesDoc = require('./classesDoc.model');
 var fs = require('fs');
+var formidable = require('formidable');
+var config = require('../../config/environment');
+var util = require('util');
 
 // Get list of classesDocs
 exports.index = function(req, res) {
-  var stream = __dirname + '/classes.pdf';
+  var stream = config.upload.path + 'assets/documents/classes.pdf';
   res.sendfile(stream)
 };
 
@@ -21,9 +24,19 @@ exports.show = function(req, res) {
 
 // Creates a new classesDoc in the DB.
 exports.create = function(req, res) {
-  ClassesDoc.create(req.body, function(err, classesDoc) {
-    if(err) { return handleError(res, err); }
-    return res.json(201, classesDoc);
+  var form = new formidable.IncomingForm();
+  form.on('file', function(name, file) {
+    fs.unlink(config.upload.path + 'assets/documents/classes.pdf', function(err) {
+      fs.rename(file.path, config.upload.path + 'assets/documents/classes.pdf', function(err) {
+        if(err) { console.log(err); }
+      });
+    });
+  });
+  form.keepExtensions = true;
+  form.parse(req, function(err, fields, files) {
+    res.writeHead(200, {'content-type': 'text/plain'});
+    res.write('received upload:\n\n');
+    res.end(util.inspect({fields: fields, files: files}));
   });
 };
 

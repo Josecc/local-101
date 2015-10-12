@@ -145,7 +145,7 @@ div(ng-include='"components/navbar/navbar.html"')
 					.col-sm-12
 						h4.thin Upload Document
 				li.collection-item
-					form(name='documentUpload', ng-submit='uploadDocument()')
+					form(name='documentUpload2', ng-submit='uploadDocument()')
 						.file-field.input-field
 							.btn
 								span File
@@ -156,7 +156,7 @@ div(ng-include='"components/navbar/navbar.html"')
 							input.with-gap(ng-model='document.type', type='radio', id='avalJobs', value="true", checked)
 							label(for='avalJobs') Avaliable Jobs
 						p
-							input.with-gap(ng-model='document.type', type='radio', id='classes', value="false")
+							input.with-gap(ng-model='document.type', type='radio', id='classes')
 							label(for='classes') Classes
 						br
 						div
