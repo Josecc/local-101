@@ -44,8 +44,35 @@ angular.module('local101App')
     });
 
     $scope.join.submit = function() {
-      console.log($scope.join.pay);
-      console.log("hello");
+      $http.post('/send-mail/jose.canahui@gmail.com', {
+                                                        substitutions: [
+                                                                          {key: ":name", val: $scope.join.name}, 
+                                                                          {key: ":email", val: $scope.join.email},
+                                                                          {key: ":phone", val: $scope.join.phone},
+                                                                          {key: ":trade", val: $scope.join.trade},
+                                                                          {key: ":apprenticeship", val: $scope.join.apprenticeship ? "Apprenticeship" : " "},
+                                                                          {key: ":certifications", val: $scope.join.certifications ? "Certifications" : " "},
+                                                                          {key: ":fairWages", val: $scope.join.wages ? "Fair Wages" : " "},
+                                                                          {key: ":overtimePay", val: $scope.join.pay ? "Overtime Pay" : " "},
+                                                                          {key: ":medicalInsurance", val: $scope.join.medical ? "Medical Insurance" : " "},
+                                                                          {key: ":retirement", val: $scope.join.retirement ? "Retirement" : " "}
+                                                                        ],
+                                                        subject: "Test",
+                                                        template: "ce5a2044-ed1f-49dc-b608-bfc27f3c6f27"
+                                                      }
+      ).success( function(data) {
+        Materialize.toast('Thank you ' + $scope.join.name + '. Form submitted!', 4000, 'rounded');
+        $scope.join.name = "";
+        $scope.join.email = "";
+        $scope.join.phone = "";
+        $scope.join.trade = "";
+        $scope.join.apprenticeship = false;
+        $scope.join.certifications = false;
+        $scope.join.wages = false;
+        $scope.join.pay = false;
+        $scope.join.medical = false;
+        $scope.join.retirement = false;
+      });
     }
 
     for (var i=0; i<10; i++) {

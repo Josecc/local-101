@@ -10,6 +10,7 @@ var express = require('express');
 module.exports = function(app) {
 
   // Insert routes below
+  app.use('/send-mail', require('./api/send-mail'));
   app.use('/documents/jobs', require('./api/jobsDoc'));
   app.use('/documents/classes', require('./api/classesDoc'));
   app.use('/summaryOfBenefits', require('./api/summaryOfBenefits'));
