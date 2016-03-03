@@ -44,20 +44,20 @@ angular.module('local101App')
     });
 
     $scope.join.submit = function() {
-      $http.post('/send-mail/jose.canahui@gmail.com', {
+      $http.post('/send-mail/ubclocal101@gmail.com', {
                                                         substitutions: [
-                                                                          {key: ":name", val: $scope.join.name}, 
-                                                                          {key: ":email", val: $scope.join.email},
-                                                                          {key: ":phone", val: $scope.join.phone},
-                                                                          {key: ":trade", val: $scope.join.trade},
-                                                                          {key: ":apprenticeship", val: $scope.join.apprenticeship ? "Apprenticeship" : " "},
-                                                                          {key: ":certifications", val: $scope.join.certifications ? "Certifications" : " "},
-                                                                          {key: ":fairWages", val: $scope.join.wages ? "Fair Wages" : " "},
-                                                                          {key: ":overtimePay", val: $scope.join.pay ? "Overtime Pay" : " "},
-                                                                          {key: ":medicalInsurance", val: $scope.join.medical ? "Medical Insurance" : " "},
-                                                                          {key: ":retirement", val: $scope.join.retirement ? "Retirement" : " "}
+                                                                          {key: "-name-", val: $scope.join.name}, 
+                                                                          {key: "-email-", val: $scope.join.email},
+                                                                          {key: "-phone-", val: $scope.join.phone},
+                                                                          {key: "-trade-", val: $scope.join.trade},
+                                                                          {key: "-apprenticeship-", val: $scope.join.apprenticeship ? "Apprenticeship" : " "},
+                                                                          {key: "-certifications-", val: $scope.join.certifications ? "Certifications" : " "},
+                                                                          {key: "-fairWages-", val: $scope.join.wages ? "Fair Wages" : " "},
+                                                                          {key: "-overtimePay-", val: $scope.join.pay ? "Overtime Pay" : " "},
+                                                                          {key: "-medicalInsurance-", val: $scope.join.medical ? "Medical Insurance" : " "},
+                                                                          {key: "-retirement-", val: $scope.join.retirement ? "Retirement" : " "}
                                                                         ],
-                                                        subject: "Test",
+                                                        subject: "Join Our Movement Submission",
                                                         template: "ce5a2044-ed1f-49dc-b608-bfc27f3c6f27"
                                                       }
       ).success( function(data) {
